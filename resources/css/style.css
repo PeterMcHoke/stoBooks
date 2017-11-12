@@ -15,7 +15,7 @@ a {
 /*Text classes*/
 .rob {
   font-family: "Roboto";
-  font-weight: 100;
+  font-weight: 300;
 }
 .com {
   font-family: "Comfortaa";
@@ -76,9 +76,7 @@ table td {
 
 
 /* --------------------------------
-
-xsigin/signup popup
-
+Sign Up and Sign in Modals
 -------------------------------- */
 .cd-user-modal {
   position: fixed;
