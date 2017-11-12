@@ -44,7 +44,7 @@ header {
 }
 #masthead {
   color: white;
-  background: linear-gradient(rgba(254, 197, 3 ,.5), rgba(0,0,0,0.4)), url("../img/StOlaf_College_Campus-2.jpg") 0% 0%/cover;
+  background: linear-gradient(rgba(228, 160, 27,.5), rgba(0,0,0,0.4)), url("../img/StOlaf_College_Campus-2.jpg") 0% 0%/cover;
 }
 #masthead p {
   font-size: 24px;
