@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <!--Browser tab-->
+    <link rel=icon href="img/favicon.ico" sizes="16x16" type="image/png">
+    <title>stoBooks</title>
+    <!--Meta ish-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Peter McCrae and Hannah Dettmann">
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <!--Google Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <!--Custom styles-->
+    <link href="resources/css/style.css" rel="stylesheet" type="text/css">
+  </head>
+
+
+<!--Navigation-->
+    <nav class = "navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+      <a class = "navbar-brand js-scroll-trigger com" href = "#"><span class = "ole">stoBooks</span></a>
+      <button class="navbar-toggler" type ="button" data-toggle = "collapse" data-target="#navBarResponsive">
+        <span class = "navbar-toggler-icon"></span>
+      </button>
+
+        <div class="collapse navbar-collapse" id="navBarResponsive">
+          <ul class = "navbar-nav mr-auto">
+            <li class = "nav-item">
+              <a class = "nav-link js-scroll-trigger" href = "#">Find Books</a>
+            </li>
+            <li class = "nav-item">
+              <a class = "nav-link js-scroll-trigger" href = "#">About</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
+          Account
+              </a>
+              <div class="dropdown-menu main-nav" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item js-scroll-trigger cd-signin" href="#0">Sign in</a>
+                <a class="dropdown-item js-scroll-trigger" href="#">Profile</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item js-scroll-trigger" href="#">Logout</a>
+              </div>
+              </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0 js-scroll-trigger">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search books">
+            <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
+          </form>
+      </div>
+    </nav>
+<!--Section one-->
+<header id = "masthead">
+  <div class = "container">
+    <div class = "row">
+      <div class = "col-12">
+        <h1 class = "display-3 text-center pt-4"><span class = "cursive">Welcome to</span> <br /><span class="display-2">stoBooks</span></h1>
+        <p class = " text-center rob py-3">
+          Textbook exchange made easy. <br /> Search it. Find it. Buy it.<br /> Repeat.
+        </p>
+      </div>
+    </div>
+  </div>
+</header>
+<!--Section two-->
+    <section id ="section_two" style = "width:100%; height:100vh;">
+      <div class = "container">
+        <h3 class = "text-center pt-5 pb-3 white-text">stoBooks Library</h3>
+        <div class="input-group col-12 py-3">
+          <input class="form-control rounded-2 py-3" type="search" placeholder="Search books" id="example-search-input">
+          <span class="input-group-btn">
+            <button class="btn btn-secondary" type="button">
+                <i class="fa fa-search"></i>
+            </button>
+          </span>
+      </div>
+              <table class = 'table table-light table-responsive-lg'>
+                <thead>
+                <tr class = "bg-dark text-white">
+                  <th class = 'text-left'>Title</th>
+                  <th class = 'text-left'>Author</th>
+                  <th class = 'text-left'>Edition</th>
+                  <th class = 'text-left'>Department</th>
+                  <th class = 'text-left'>Class Number</th>
+                  <th class = 'text-left'>ISBN</th>
+                  <th class = 'text-left'>Price</th>
+                  <th class = 'text-left'>Seller</th>
+                </tr>
+                </thead>
+                <tbody class = 'table-hover'>
+                <tr>
+                  <td>Moby Dick</td>
+                  <td>Herman Mellville</td>
+                  <td>2</td>
+                  <td>ENG</td>
+                  <td>231</td>
+                  <td>123181223</td>
+                  <td>$20</td>
+                  <td>mccrae1</td>
+                </tr>
+                <tr>
+                  <td>C++ Tutorial</td>
+                  <td>Vinayak Elangovan</td>
+                  <td>2</td>
+                  <td>CS</td>
+                  <td>231</td>
+                  <td>485853092</td>
+                  <td>$10</td>
+                  <td>frank</td>
+                </tr>
+                <tr>
+                  <td>Principles of Economics</td>
+                  <td>Seth Binder</td>
+                  <td>1</td>
+                  <td>ECON</td>
+                  <td>250</td>
+                  <td>374859602</td>
+                  <td>$50</td>
+                  <td>dettma1</td>
+                </tr>
+                <tr>
+                  <td>Zen Buddhism</td>
+                  <td>Karil Kucera</td>
+                  <td>3</td>
+                  <td>ASIA</td>
+                  <td>310</td>
+                  <td>123456789</td>
+                  <td>$30</td>
+                  <td>breska1</td>
+                </tr>
+              </tbody>
+              </table>
+        </div>
+      </div>
+    </section>
+<!--Sign up and login-->
+    	<div class="cd-user-modal py-5"> <!-- this is the entire modal form, including the background -->
+    		<div class="cd-user-modal-container"> <!-- this is the container wrapper -->
+    			<ul class="cd-switcher list-unstyled">
+    				<li><a href="#0">Sign in</a></li>
+    				<li><a href="#0">New account</a></li>
+    			</ul>
+
+    			<div id="cd-login"> <!-- log in form -->
+    				<form class="cd-form">
+    					<p class="fieldset">
+    						<label class="image-replace cd-email" for="signin-email">E-mail</label>
+    						<input class="full-width has-padding has-border" id="signin-email" type="email" placeholder="E-mail">
+    						<span class="cd-error-message">Error message here!</span>
+    					</p>
+
+    					<p class="fieldset">
+    						<label class="image-replace cd-password" for="signin-password">Password</label>
+    						<input class="full-width has-padding has-border" id="signin-password" type="text"  placeholder="Password">
+    						<a href="#0" class="hide-password">Hide</a>
+    						<span class="cd-error-message">Error message here!</span>
+    					</p>
+
+    					<p class="fieldset">
+    						<input type="checkbox" id="remember-me" checked>
+    						<label for="remember-me">Remember me</label>
+    					</p>
+
+    					<p class="fieldset">
+    						<input class="full-width" type="submit" value="Login">
+    					</p>
+    				</form>
+
+    				<p class="cd-form-bottom-message"><a href="#0"><br />Forgot your password?</a></p>
+    				<!-- <a href="#0" class="cd-close-form">Close</a> -->
+    			</div> <!-- cd-login -->
+
+    			<div id="cd-signup"> <!-- sign up form -->
+    				<form class="cd-form">
+    					<p class="fieldset">
+    						<label class="image-replace cd-username" for="signup-username">Username</label>
+    						<input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Username">
+    						<span class="cd-error-message">Error message here!</span>
+    					</p>
+
+    					<p class="fieldset">
+    						<label class="image-replace cd-email" for="signup-email">E-mail</label>
+    						<input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail">
+    						<span class="cd-error-message">Error message here!</span>
+    					</p>
+
+    					<p class="fieldset">
+    						<label class="image-replace cd-password" for="signup-password">Password</label>
+    						<input class="full-width has-padding has-border" id="signup-password" type="text"  placeholder="Password">
+    						<a href="#0" class="hide-password">Hide</a>
+    						<span class="cd-error-message">Error message here!</span>
+    					</p>
+
+    					<p class="fieldset">
+    						<input type="checkbox" id="accept-terms">
+    						<label for="accept-terms">I agree to the <a href="#0">Terms</a></label>
+    					</p>
+
+    					<p class="fieldset">
+    						<input class="full-width has-padding" type="submit" value="Create account">
+    					</p>
+    				</form>
+
+    				<!-- <a href="#0" class="cd-close-form">Close</a> -->
+    			</div> <!-- cd-signup -->
+
+    			<div id="cd-reset-password"> <!-- reset password form -->
+    				<p class="cd-form-message">Lost your password? Please enter your email address. You will receive a link to create a new password.</p>
+
+    				<form class="cd-form">
+    					<p class="fieldset">
+    						<label class="image-replace cd-email" for="reset-email">E-mail</label>
+    						<input class="full-width has-padding has-border" id="reset-email" type="email" placeholder="E-mail">
+    						<span class="cd-error-message">Error message here!</span>
+    					</p>
+
+    					<p class="fieldset">
+    						<input class="full-width has-padding" type="submit" value="Reset password">
+    					</p>
+    				</form>
+
+    				<p class="cd-form-bottom-message"><a href="#0">Back to log-in</a></p>
+    			</div> <!-- cd-reset-password -->
+    			<a href="#0" class="cd-close-form">Close</a>
+    		</div> <!-- cd-user-modal-container -->
+    	</div> <!-- cd-user-modal -->
+
+
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src = "resources/js/main.js"></script>
+  </body>
+</html>
