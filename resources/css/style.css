@@ -1,7 +1,6 @@
 /*Page-wide CSS modifications*/
 html {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
 }
 
 body {
@@ -11,6 +10,7 @@ body {
 a {
   text-decoration: none;
 }
+
 
 /*Text classes*/
 .rob {
@@ -52,7 +52,9 @@ header {
 
 #section_two {
   background-image: url("../img/congruent_outline.png");
-
+}
+footer {
+  color: white;
 }
 /*Table CSS*/
 caption {
@@ -393,4 +395,26 @@ Sign Up and Sign in Modals
 
 #cd-login.is-selected, #cd-signup.is-selected, #cd-reset-password.is-selected {
   display: block;
+}
+
+
+/*Footer*/
+footer img {
+  height: 120px;
+  width: auto;
+}
+
+footer img:hover {
+  transition: all 300ms linear 0ms;
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.03);
+}
+footer a {
+  text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: none;
+    color: white;
 }
