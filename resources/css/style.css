@@ -1,6 +1,5 @@
 /*Page-wide CSS modifications*/
 html {
-
 }
 
 body {
@@ -27,6 +26,9 @@ a {
 .white-text {
   color:white;
 }
+.black-text {
+  color: black;
+}
 .ole {
   color:  #e4a01b;
 }
@@ -37,6 +39,10 @@ a {
   .dropdown-item,.dropdown-menu {
     width: 150px;
   }
+}
+nav {
+  background-color: #333333;
+
 }
 header {
   box-shadow: 0px 5px 15px rgba(0,0,0,0.4);
@@ -51,11 +57,29 @@ header {
 }
 
 #section_two {
+  width:100%;
   background-image: url("../img/congruent_outline.png");
+}
+#section_three {
+  width: 100%;
+  background-image: url("../img/topography.png");
+}
+.sell-form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1);
+}
+form .input-group {
+  height: 40px;
 }
 footer {
   color: white;
+  background-image: url("../img/zig zag wool.png");
+
 }
+
+
 /*Table CSS*/
 caption {
   color: black;
