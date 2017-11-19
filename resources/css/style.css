@@ -64,7 +64,7 @@ header {
 
 #section_two {
   width:100%;
-  background-image: ("../img/congruent_outline.png");
+  background-image: url("../img/congruent_outline.png");
 }
 #section_three {
   width: 100%;
