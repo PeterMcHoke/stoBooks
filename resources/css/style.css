@@ -64,7 +64,7 @@ header {
 
 #section_two {
   width:100%;
-  background-image: url("../img/congruent_outline.png");
+  background-image: ("../img/congruent_outline.png");
 }
 #section_three {
   width: 100%;
@@ -81,7 +81,8 @@ form .input-group {
 }
 footer {
   color: white;
-  background-image: url("../img/zig zag wool.png");
+  background: #242128 100% 100% url("../img/sto_lion.svg") no-repeat;
+  overflow: hidden;
 
 }
 
