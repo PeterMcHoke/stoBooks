@@ -10,6 +10,34 @@ a {
   text-decoration: none;
 }
 
+/*Modifications to Bootstrap classes*/
+.btn-warning {
+  background-color: #e4a01b;
+  color: #242128;
+  border-color: #e4a01b;
+}
+.btn-warning:hover {
+  color: white;
+  background-color: #f7c55a;
+  border-color: #f7c55a;
+}
+.btn-outline-warning {
+  color: #e4a01b;
+  border-color: #e4a01b;
+}
+.btn-outline-warning:hover {
+  color: white;
+  background-color: #f7c55a;
+  border-color: #f7c55a;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+color: white;
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #e4a01b;
+}
+
 .goto {
   display: block;
     position: relative;
@@ -83,8 +111,8 @@ footer {
   color: white;
   background: #242128 100% 100% url("../img/sto_lion.svg") no-repeat;
   overflow: hidden;
-
 }
+
 
 
 /*Table CSS*/
