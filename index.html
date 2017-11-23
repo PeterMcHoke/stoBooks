@@ -19,6 +19,7 @@
         <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
     <!--Custom styles-->
     <link href="resources/css/style.css" rel="stylesheet" type="text/css">
+
   </head>
 
 
@@ -30,15 +31,15 @@
       </button>
 
         <div class="collapse navbar-collapse" id="navBarResponsive">
-          <ul class = "navbar-nav mr-auto">
-            <li class = "nav-item js-scroll-trigger">
-              <a class = "nav-link " href = "#goto_section_two">Buy</a>
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item js-scroll-trigger">
+              <a class="nav-link js-scroll-trigger" href="#goto_section_two">Buy</a>
             </li>
-            <li class = "nav-item js-scroll-trigger">
-              <a class = "nav-link" href = "#goto_section_three">Sell</a>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#goto_section_three">Sell</a>
             </li>
-            <li class = "nav-item main-nav">
-              <a class = "nav-link js-scroll-trigger" href = "#">Sign in</a>
+            <li class="nav-item main-nav">
+              <a class="nav-link js-scroll-trigger" href="#">Sign in</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
@@ -78,7 +79,7 @@
         <div class = "row">
         <div class="col-12">
           <div class="input-group input-group-lg py-5">
-            <input type="text" class="form-control" placeholder="Search for..." aria-label="Search for...">
+            <input id = "stoSearch" type="text" class="form-control" placeholder="Search for..." aria-label="Search for..." onkeyup="searchBooks()">
             <span class="input-group-btn">
               <button class="btn btn-warning" type="button">Go!</button>
             </span>
@@ -87,7 +88,7 @@
       </div>
       <div class = "row pb-5">
         <div class = "col-12 pb-5">
-              <table class = 'table table-light table-responsive-lg rounded-top'>
+              <table class = 'table table-light table-responsive-lg rounded-top' id = 'stoLibrary'>
                 <thead>
                 <tr class = "bg-dark text-white">
                   <th class = 'text-left'>Title</th>
@@ -168,7 +169,7 @@
               <div class="form-row pt-3">
                 <div class="form-group col-md-2">
                   <label for="inputEdition">Edition</label>
-                  <input type="password" class="form-control" id="inputEdition" placeholder="7">
+                  <input type="text" class="form-control" id="inputEdition" placeholder="7">
                 </div>
                 <div class="form-group col-md-2">
                   <label for="inputDept">Department</label>
@@ -247,7 +248,7 @@
                 </div>
               </div>
               <div class = "text-center">
-                <button type="submit" class="btn btn-outline-warning">Make money</button>
+                <button class="btn btn-outline-warning" onclick="sellBooks()">Make money</button>
               </div>
             </form>
           </div>
