@@ -4,22 +4,33 @@ html {
 
 body {
   font-family: "Comfortaa";
+  font-weight: 100;
   background-color: white;
+  cursor: default;
 }
 a {
   text-decoration: none;
 }
-
+a:hover {
+  text-decoration: none;
+}
 /*Modifications to Bootstrap classes*/
+.btn {
+  box-shadow: 8px 10px 20px 0px rgba(46,61,73,0.25)
+}
+.btn:hover {
+  box-shadow: 2px 4px 8px 0px rgba(46,61,73,0.35);
+
+}
 .btn-warning {
   background-color: #e4a01b;
   color: white;
   border-color: #e4a01b;
-}
+  }
 .btn-warning:hover {
-  color: #242128;
-  background-color: #f7c55a;
-  border-color: #f7c55a;
+  color: black;
+  background-color: #e4a01b;
+  border-color: #e4a01b;
 }
 .btn-outline-warning {
   color: #e4a01b;
@@ -27,10 +38,13 @@ a {
 }
 .btn-outline-warning:hover {
   color: white;
-  background-color: #f7c55a;
-  border-color: #f7c55a;
 }
 
+.btn,
+button,
+tr {
+  cursor: pointer;
+}
 .navbar-dark .navbar-nav .nav-link {
 color: white;
 }
@@ -48,7 +62,7 @@ color: white;
 /*Text classes*/
 .rob {
   font-family: "Roboto";
-  font-weight: 300;
+  font-weight: 100;
 }
 .com {
   font-family: "Comfortaa";
@@ -65,8 +79,30 @@ color: white;
 }
 .ole {
   color:  #e4a01b;
+  font-family: "Roboto";
+  font-weight: 100;
+  visibility: visible;
+  -webkit-transform: translateX(0) scale(1);
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  opacity: 1;
+  -webkit-transition: -webkit-transform 0.55s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 0.55s cubic-bezier(0.6, 0.2, 0.1, 1) 0s;
+  transition: transform 0.55s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 0.55s cubic-bezier(0.6, 0.2, 0.1, 1) 0s;
 }
 
+.small {
+  font-size: 80%;
+}
+.small:hover {
+  color: black;
+}
+
+/*BEST BOXSHADOW ON THE INTERNET
+  box-shadow: 5px 5px 25px 0px rgba(46,61,73,0.2);
+
+Hover:
+  box-shadow: 2px 4px 8px 0px rgba(46,61,73,0.2)
+*/
 /*Navbar*/
 
 @media only screen and (max-width: 992px) {
@@ -76,27 +112,61 @@ color: white;
 }
 nav {
   background-color: #333333;
+}
+.dropdown-item:hover{
+  background-color: white;
+  color: #e4a01b;
+}
+.dropdown-item:active {
+  background-color: white;
+  color: #e4a01b;
 
 }
 header {
-  box-shadow: 0px 5px 15px rgba(0,0,0,0.4);
-
+  position:fixed;
+  top: 41;
+  right:0;
+  left:0;
+  z-index:1;
 }
+@media only screen and (max-width: 768px) {
 #masthead {
   color: white;
-  background: linear-gradient(rgba(228, 160, 27,.5), rgba(0,0,0,0.4)), url("../img/StOlaf_College_Campus-2.jpg") 0% 0%/cover;
+  background: linear-gradient(rgba(252, 167, 0,.84), rgba(0,0,0,0.4)), url("../img/stoBooksHeaderImage.jpg") 0% 0%/cover;
+  box-shadow: 5px 5px 25px 0px rgba(46,61,73,0.2);
+}
+}
+@media only screen and (min-width: 768px) {
+#masthead {
+  color: white;
+  background: linear-gradient(rgba(252, 167, 0,.84), rgba(0,0,0,0.4)), url("../img/stoBooksHeaderImageWide.jpg") 0% 0%/cover;
+  box-shadow: 5px 5px 25px 0px rgba(46,61,73,0.2);
+}
 }
 #masthead p {
   font-size: 24px;
 }
-
-#section_two {
+.overlay {
+  margin-top: 340px;
+  position:relative;
+  z-index:2;
+  box-shadow: 5px 5px 25px 0px rgba(46,61,73,0.2);
+}
+.all-the-way-up {
+  z-index: 2;
+}
+.section{
   width:100%;
+  background-attachment: fixed;
+}
+
+#two {
   background-image: url("../img/congruent_outline.png");
 }
-#section_three {
-  width: 100%;
+
+#three {
   background-image: url("../img/topography.png");
+
 }
 .sell-form {
   background-color: white;
@@ -130,12 +200,12 @@ table td {
 }
 
 .table-hover tr:hover {
-  background-color: rgba(0,0,0,.4);
-  color: white;
+  background-color: #333333;
+  color: #e4a01b;
 }
-
-
-
+.table th {
+  border: none;
+}
 /* --------------------------------
 Sign Up and Sign in Modals
 -------------------------------- */
@@ -146,7 +216,7 @@ Sign Up and Sign in Modals
   width: 100%;
   height: 100%;
   background: rgba(52, 54, 66, 0.9);
-  z-index: 3;
+  z-index: 100;
   overflow-y: auto;
   cursor: pointer;
   visibility: hidden;
@@ -456,7 +526,11 @@ Sign Up and Sign in Modals
   display: block;
 }
 
-
+.profile_box {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+}
 /*Footer*/
 footer img {
   height: 120px;

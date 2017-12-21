@@ -179,3 +179,52 @@ jQuery.fn.putCursorAtEnd = function() {
   $(window).scroll(navbarCollapse);
 
 })(jQuery); // End of use strict
+
+function searchBooks() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("stoSearch");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("stoLibrary");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+//Rework this function to use arrays (inefficient af rn)
+function sellBooks() {
+	var table, row, title, author, edition, dept, number, isbn, price;
+//Parsing the values from the input fields
+	table = document.getElementById("stoLibrary");
+	row = table.insertRow(0);
+	title = document.getElementById("inputTitle").value;
+  author = document.getElementById("inputAuthor").value;
+	edition = document.getElementById("inputEdition").value;
+	dept = document.getElementById("inputDept").value;
+	number = document.getElementById("inputClass").value;
+	isbn = document.getElementById("inputISBN").value;
+	price = document.getElementById("inputPrice").value;
+//Highlighting the columns (cells) to insert info from input
+	var titleCol, authorCol, editionCol, deptCol, numberCol, isbnCol, priceCol;
+	titleCol = row.insertCell(0);
+	authorCol = row.insertCell(1);
+	editionCol = row.insertCell(2);
+	deptCol = row.insertCell(3);
+	numberCol = row.insertCell(4);
+	isbnCol = row.insertCell(5);
+	priceCol = row.insertCell(6);
+//Adding a row with all of the info from the input fields
+	titleCol.innerHTML = title;
+	authorCol.innerHTML = author;
+	editionCol.innerHTML = edition;
+	deptCol.innerHTML = dept;
+	numberCol.innerHTML = number;
+	isbnCol.innerHTML = isbn;
+	priceCol.innerHTML = price;
+}

@@ -25,19 +25,22 @@ SECRET_KEY = '9=0zp5$c^%3b1*hda_#b+y9a0f7x6&0o1)6rv#mngq@og!e+j@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+'0.0.0.0'
+]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'stoBooks_app.apps.StoBooksAppConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'stoBooks_app',
+    # 'stoBooks_app'
 ]
 
 MIDDLEWARE = [
@@ -106,7 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Detroit'
 
 USE_I18N = True
 

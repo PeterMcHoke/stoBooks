@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-{% load static %}
 <html lang = "en">
   <head>
     <!--Browser tab-->
@@ -19,9 +18,10 @@
         <link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
     <!--Custom styles-->
-    <link href="{% static "stoBooks_app/css/style.css" %}" rel="stylesheet" type="text/css">
-  </head>
+    <link href="../static/stoBooks_app/css/style.css" rel="stylesheet" type="text/css">
 
+  </head>
+  <body>
 
 <!--Navigation-->
     <nav class = "navbar navbar-expand-lg navbar-dark sticky-top">
@@ -31,15 +31,15 @@
       </button>
 
         <div class="collapse navbar-collapse" id="navBarResponsive">
-          <ul class = "navbar-nav mr-auto">
-            <li class = "nav-item js-scroll-trigger">
-              <a class = "nav-link " href = "#goto_section_two">Buy</a>
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item js-scroll-trigger">
+              <a class="nav-link js-scroll-trigger" href="#goto_section_two">Buy</a>
             </li>
-            <li class = "nav-item js-scroll-trigger">
-              <a class = "nav-link" href = "#goto_section_three">Sell</a>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#goto_section_three">Sell</a>
             </li>
-            <li class = "nav-item main-nav">
-              <a class = "nav-link js-scroll-trigger" href = "#">Sign in</a>
+            <li class="nav-item main-nav">
+              <a class="nav-link js-scroll-trigger" href="#">Sign in</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
@@ -71,15 +71,16 @@
     </div>
   </div>
 </header>
+<div class = "overlay">
 <!--Section two-->
-    <section id ="section_two">
+    <section class = "section" id ="two">
       <a class="goto" id="goto_section_two"></a>
       <div class = "container">
         <h3 class = "text-center pt-5 pb-3 white-text" id = "library">stoBooks Library</h3>
         <div class = "row">
         <div class="col-12">
           <div class="input-group input-group-lg py-5">
-            <input type="text" class="form-control" placeholder="Search for..." aria-label="Search for...">
+            <input id = "stoSearch" type="text" class="form-control" placeholder="Search for..." aria-label="Search for..." onkeyup="searchBooks()">
             <span class="input-group-btn">
               <button class="btn btn-warning" type="button">Go!</button>
             </span>
@@ -88,7 +89,7 @@
       </div>
       <div class = "row pb-5">
         <div class = "col-12 pb-5">
-              <table class = 'table table-light table-responsive-lg rounded-top'>
+              <table class = 'table table-light table-responsive-lg rounded-top' id = 'stoLibrary'>
                 <thead>
                 <tr class = "bg-dark text-white">
                   <th class = 'text-left'>Title</th>
@@ -149,7 +150,7 @@
       </div>
     </section>
 
-    <section id = "section_three">
+    <section class = "section" id = "three">
       <a class="goto" id="goto_section_three"></a>
       <div class = "container">
         <div class = "row pb-5">
@@ -169,71 +170,71 @@
               <div class="form-row pt-3">
                 <div class="form-group col-md-2">
                   <label for="inputEdition">Edition</label>
-                  <input type="password" class="form-control" id="inputEdition" placeholder="7">
+                  <input type="text" class="form-control" id="inputEdition" placeholder="7">
                 </div>
                 <div class="form-group col-md-2">
                   <label for="inputDept">Department</label>
                   <input id="inputDept" class="form-control" list = "departments" name="department" placeholder = "MATH">
                     <datalist id="departments">
-                      <option value="AFAM">
-                      <option value="AMCON">
-                      <option value="AMST">
-                      <option value="ART">
-                      <option value="ASIAN">
-                      <option value="BIO">
-                      <option value="CH/BI">
-                      <option value="CHEM">
-                      <option value="CHIN">
-                      <option value="CLASS">
-                      <option value="CSCI">
-                      <option value="DANCE">
-                      <option value="ECON">
-                      <option value="EDUC">
-                      <option value="ENGL">
-                      <option value="ENVST">
-                      <option value="ESAC">
-                      <option value="ESTH">
-                      <option value="FAMST">
-                      <option value="FILM">
-                      <option value="FREN">
-                      <option value="GCON">
-                      <option value="GERM">
-                      <option value="GREEK">
-                      <option value="HIST">
-                      <option value="ID">
-                      <option value="IS">
-                      <option value="JAPAN">
-                      <option value="LATIN">
-                      <option value="MATH">
-                      <option value="MEDIA">
-                      <option value="MGMT">
-                      <option value="MSCS">
-                      <option value="MUSEN">
-                      <option value="MUSIC">
-                      <option value="NORW">
-                      <option value="NURS">
-                      <option value="OFFC">
-                      <option value="PACON">
-                      <option value="PHIL">
-                      <option value="PHYS">
-                      <option value="PSCI">
-                      <option value="PSYCH">
-                      <option value="RACE">
-                      <option value="REL">
-                      <option value="RUSSN">
-                      <option value="SCICN">
-                      <option value="SOAN">
-                      <option value="SPAN">
-                      <option value="STAT">
-                      <option value="SWRK">
-                      <option value="THEAT">
-                      <option value="WMGST">
-                      <option value="WRIT">
+                      <option value="AFAM"></option>
+                      <option value="AMCON"></option>
+                      <option value="AMST"></option>
+                      <option value="ART"></option>
+                      <option value="ASIAN"></option>
+                      <option value="BIO"></option>
+                      <option value="CH/BI"></option>
+                      <option value="CHEM"></option>
+                      <option value="CHIN"></option>
+                      <option value="CLASS"></option>
+                      <option value="CSCI"></option>
+                      <option value="DANCE"></option>
+                      <option value="ECON"></option>
+                      <option value="EDUC"></option>
+                      <option value="ENGL"></option>
+                      <option value="ENVST"></option>
+                      <option value="ESAC"></option>
+                      <option value="ESTH"></option>
+                      <option value="FAMST"></option>
+                      <option value="FILM"></option>
+                      <option value="FREN"></option>
+                      <option value="GCON"></option>
+                      <option value="GERM"></option>
+                      <option value="GREEK"></option>
+                      <option value="HIST"></option>
+                      <option value="ID"></option>
+                      <option value="IS"></option>
+                      <option value="JAPAN"></option>
+                      <option value="LATIN"></option>
+                      <option value="MATH"></option>
+                      <option value="MEDIA"></option>
+                      <option value="MGMT"></option>
+                      <option value="MSCS"></option>
+                      <option value="MUSEN"></option>
+                      <option value="MUSIC"></option>
+                      <option value="NORW"></option>
+                      <option value="NURS"></option>
+                      <option value="OFFC"></option>
+                      <option value="PACON"></option>
+                      <option value="PHIL"></option>
+                      <option value="PHYS"></option>
+                      <option value="PSCI"></option>
+                      <option value="PSYCH"></option>
+                      <option value="RACE"></option>
+                      <option value="REL"></option>
+                      <option value="RUSSN"></option>
+                      <option value="SCICN"></option>
+                      <option value="SOAN"></option>
+                      <option value="SPAN"></option>
+                      <option value="STAT"></option>
+                      <option value="SWRK"></option>
+                      <option value="THEAT"></option>
+                      <option value="WMGST"></option>
+                      <option value="WRIT"></option>
                     </datalist>
                   </input>
               </div>
                 <div class="form-group col-md-2">
-                  <label for="inputClass">Class Number</label>
+                  <label for="inputClass">Class</label>
                   <input type="text" class="form-control" id="inputClass" placeholder="239">
                 </div>
                 <div class="form-group col-md-3">
@@ -248,7 +249,7 @@
                 </div>
               </div>
               <div class = "text-center">
-                <button type="submit" class="btn btn-outline-warning">Make money</button>
+                <button class="btn btn-outline-warning" onclick="sellBooks()">Make money</button>
               </div>
             </form>
           </div>
@@ -270,28 +271,30 @@
             <h4 class = "ole">Meet the Developers</h4>
             <ul class = "list-unstyled list-inline">
               <li class = "list-inline-item py-3">
-                <a href = "https://petermchoke.github.io/portfolio" target="_blank"><img class = "rounded-circle m-2" src = "{% static "stoBooks_app/img/IMG_0244.JPG" %}"/><br />
+                <a href = "https://petermchoke.github.io/portfolio" target="_blank"><img class = " rounded-circle m-2" src = "resources/img/IMG_0244.JPG"/><br />
                 <span class = "text-secondary">Peter</span></a>
               </li>
               <li class = "list-inline-item py-3">
                 <a href="https://dettma1.github.io/portfolio/" target="_blank">
-                <img class = "rounded-circle m-2" src = "{% static "stoBooks_app/img/han.jpg" %}"> <br/>
+                <img class = "rounded-circle m-2" src = "resources/img/han.jpg"/> <br />
                 <span class = "text-secondary">Hannah</span></a>
               </li>
             </ul>
-        </div>
-        <div class = "col-12 col-md-4 pt-4">
-          <h4 class = "ole"> Contact Us</h4>
-          <ul class = "list-unstyled">
-            <li class = "pt-3 text-secondary">Peter</li>
-            <li class = "text-secondary ole"><a href="mailto:mccrae1@stolaf.edu">
-              mccrae1@stolaf.edu</a></li>
-            <li class = "pt-3 text-secondary">Hannah</li>
-            <li class = "text-secondary ole"><a href="mailto:dettma1@stolaf.edu">
-              dettma1@stolaf.edu</a></li>      </ul>
+          </div>
+          <div class = "col-12 col-md-4 pt-4">
+            <h4 class = "ole"> Contact Us</h4>
+            <ul class = "list-unstyled">
+              <li class = "pt-3 text-secondary">Peter</li>
+              <li class = "text-secondary ole"><a href="mailto:mccrae1@stolaf.edu">
+                mccrae1@stolaf.edu</a></li>
+              <li class = "pt-3 text-secondary">Hannah</li>
+              <li class = "text-secondary ole"><a href="mailto:dettma1@stolaf.edu">
+                dettma1@stolaf.edu</a></li>      </ul>
+          </div>
         </div>
       </div>
     </footer>
+  </div>
 <!--Sign up and login-->
     	<div class="cd-user-modal py-5"> <!-- this is the entire modal form, including the background -->
     		<div class="cd-user-modal-container"> <!-- this is the container wrapper -->
@@ -333,7 +336,7 @@
     				<form class="cd-form">
     					<p class="fieldset">
     						<label class="image-replace cd-username" for="signup-username">Username</label>
-    						<input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Username">
+    						<input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Full name">
     						<span class="cd-error-message">Error message here!</span>
     					</p>
 
@@ -352,7 +355,7 @@
 
     					<p class="fieldset">
     						<input type="checkbox" id="accept-terms">
-    						<label for="accept-terms">I agree to the <a href="#0">Terms</a></label>
+    						<label for="accept-terms">I agree to the <a href="http://www.sanger.dk" target = "_blank">Terms</a></label>
     					</p>
 
     					<p class="fieldset">
@@ -397,6 +400,7 @@
                 <li>Username: <span class = "text-secondary">mccrae1</span></li>
                 <li>Phone: <span class = "text-secondary">(734) 585-6779</span></li>
                 <li>Preferred Payment: <span class = "text-secondary">petermchoke(Venmo)</span></li>
+                <li><a href = "/user-profile/"><span class = "small ole">See full profile</span></a></li>
               </ul>
             </div>
             <div class="modal-footer">
@@ -410,6 +414,6 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-    <script src = "{% static "stoBooks_app/js/main.js" %}"></script>
+    <script src = "../static/stoBooks_app/js/main.js"></script>
   </body>
 </html>
