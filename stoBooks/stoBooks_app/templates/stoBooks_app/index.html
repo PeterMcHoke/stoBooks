@@ -22,6 +22,21 @@
 
   </head>
   <body>
+<!--Preloader-->
+<div id="loader-wrapper">
+	<div id="loader">
+    <div class="sk-cube sk-cube1"></div>
+    <div class="sk-cube sk-cube2"></div>
+    <div class="sk-cube sk-cube3"></div>
+    <div class="sk-cube sk-cube4"></div>
+    <div class="sk-cube sk-cube5"></div>
+    <div class="sk-cube sk-cube6"></div>
+    <div class="sk-cube sk-cube7"></div>
+    <div class="sk-cube sk-cube8"></div>
+    <div class="sk-cube sk-cube9"></div>
+  </div>
+
+</div>
 
 <!--Navigation-->
     <nav class = "navbar navbar-expand-lg navbar-dark sticky-top">
@@ -32,7 +47,7 @@
 
         <div class="collapse navbar-collapse" id="navBarResponsive">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item js-scroll-trigger">
+            <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#goto_section_two">Buy</a>
             </li>
             <li class="nav-item">
@@ -46,7 +61,7 @@
           Account
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item js-scroll-trigger cd-signin" href="#0" data-toggle="modal" data-target="#exampleModal">Profile</a>
+                <a class="dropdown-item js-scroll-trigger" href="#0" data-toggle="modal" data-target="#ProfileModal">Profile</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item js-scroll-trigger" href="#">Logout</a>
               </div>
@@ -103,7 +118,25 @@
                 </tr>
                 </thead>
                 <tbody class = 'table-hover'>
-                <tr>
+                  {% if recent_postings %}
+                  <tr class = 'book-modal'>
+                    {% for book in recent_postings %}
+                      <td>{{book.title}}</td>
+                      <td>{{book.author}}</td>
+                      <td>{{book.edition}}</td>
+                      <td>{{book.dept}}</td>
+                      <td>{{book.class_number}}</td>
+                      <td>{{book.isbn}}</td>
+                      <td>{{book.price}}</td>
+                      <td>{{book.seller.username}}</td>
+                  </tr>
+                  {% endfor %}
+                  {% else %}
+                  <tr>
+                    <td>No books available!</td>
+                  </tr>
+                  {% endif %}
+                <!-- <tr>
                   <td>Moby Dick</td>
                   <td>Herman Mellville</td>
                   <td>2</td>
@@ -142,7 +175,7 @@
                   <td>123456789</td>
                   <td>$30</td>
                   <td>breska1</td>
-                </tr>
+                </tr> -->
               </tbody>
               </table>
           </div>
@@ -271,12 +304,12 @@
             <h4 class = "ole">Meet the Developers</h4>
             <ul class = "list-unstyled list-inline">
               <li class = "list-inline-item py-3">
-                <a href = "https://petermchoke.github.io/portfolio" target="_blank"><img class = " rounded-circle m-2" src = "resources/img/IMG_0244.JPG"/><br />
+                <a href = "https://petermchoke.github.io/portfolio" target="_blank"><img class = " rounded-circle m-2" src = "../static/stoBooks_app/img/IMG_0244.JPG"/><br />
                 <span class = "text-secondary">Peter</span></a>
               </li>
               <li class = "list-inline-item py-3">
                 <a href="https://dettma1.github.io/portfolio/" target="_blank">
-                <img class = "rounded-circle m-2" src = "resources/img/han.jpg"/> <br />
+                <img class = "rounded-circle m-2" src = "../static/stoBooks_app/img/han.jpg"/> <br />
                 <span class = "text-secondary">Hannah</span></a>
               </li>
             </ul>
@@ -386,11 +419,11 @@
     			<a href="#0" class="cd-close-form">Close</a>
     		</div> <!-- cd-user-modal-container -->
     	</div> <!-- cd-user-modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade" id="ProfileModal" tabindex="-1" role="dialog" aria-labelledby="ProfileModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Peter McCrae</h5>
+              <h5 class="modal-title" id="ProfileModalLabel">Peter McCrae</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -400,7 +433,33 @@
                 <li>Username: <span class = "text-secondary">mccrae1</span></li>
                 <li>Phone: <span class = "text-secondary">(734) 585-6779</span></li>
                 <li>Preferred Payment: <span class = "text-secondary">petermchoke(Venmo)</span></li>
-                <li><a href = "/user-profile/"><span class = "small ole">See full profile</span></a></li>
+                <li><a href = "/profile"><span class = "small ole">See full profile</span></a></li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <!-- <button type="button" class="btn btn-outline-warning" data-dismiss="modal">Close</button> -->
+              <button type="button" class="btn btn-warning btn-large btn-block" data-dismiss="modal">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!--Figure out how to create a modal that has the text from the selected table row-->
+      <div class="modal fade" id="BookModal" tabindex="-1" role="dialog" aria-labelledby="BookModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="BookModalLabel"></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <ul class = "list-unstyled">
+                <li>Title: <span class = "text-secondary">mccrae1</span></li>
+                <li>Author: <span class = "text-secondary">(734) 585-6779</span></li>
+                <li>Preferred Payment: <span class = "text-secondary">petermchoke(Venmo)</span></li>
+                <li><a href = "/profile"><span class = "small ole">See full profile</span></a></li>
               </ul>
             </div>
             <div class="modal-footer">
@@ -410,10 +469,19 @@
           </div>
         </div>
       </div>
+
+
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     <script src = "../static/stoBooks_app/js/main.js"></script>
+    <script type="text/javascript">
+    	$(document).ready(function(){
+    		setTimeout(function(){
+    			$('body').addClass('loaded');
+    		}, 2000);
+    	});
+    </script>
   </body>
 </html>

@@ -1,3 +1,5 @@
+
+
 jQuery(document).ready(function($){
 	var $form_modal = $('.cd-user-modal'),
 		$form_login = $form_modal.find('#cd-login'),
@@ -9,7 +11,9 @@ jQuery(document).ready(function($){
 		$forgot_password_link = $form_login.find('.cd-form-bottom-message a'),
 		$back_to_login_link = $form_forgot_password.find('.cd-form-bottom-message a'),
 		$main_nav = $('.main-nav');
+		$book_modal = $('book-modal');
 
+		
 	//open modal
 	$main_nav.on('click', function(event){
 
@@ -178,7 +182,11 @@ jQuery.fn.putCursorAtEnd = function() {
   // Collapse the navbar when page is scrolled
   $(window).scroll(navbarCollapse);
 
+	function hidePreloader() {
+	$('.spinner-wrapper').fadeOut(500);
+	}
 })(jQuery); // End of use strict
+
 
 function searchBooks() {
   var input, filter, table, tr, td, i;

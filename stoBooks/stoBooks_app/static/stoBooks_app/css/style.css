@@ -15,6 +15,11 @@ a:hover {
   text-decoration: none;
 }
 /*Modifications to Bootstrap classes*/
+.form-control:focus {
+  border-color: white;
+  box-shadow: 2px 4px 8px 0px rgba(46,61,73,0.35);
+
+}
 .btn {
   box-shadow: 8px 10px 20px 0px rgba(46,61,73,0.25)
 }
@@ -51,7 +56,40 @@ color: white;
 .navbar-dark .navbar-nav .nav-link:hover {
   color: #e4a01b;
 }
+.navbar-transparent {
+  background-color: transparent;
+  filter: alpha(opacity=50);
+  border-color: transparent;
+  padding-top: 28px;
+  transition: transform 0.3s ease, background-color 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, margin 0.25s ease-out;
+}
 
+.nav-link,
+nav span {
+  color: white;
+}
+.navbar {
+  -webkit-transition: all 500ms ease-out;
+    transition: all 500ms ease-out;}
+}
+.nav-item a:hover {
+  color: black;
+}
+
+.dropdown-menu-center {
+  left: 50% !important;
+  right: auto !important;
+  text-align: center !important;
+  transform: translate(-50%, 0) !important;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.logo {
+  font-size: 1.5rem;
+}
 .goto {
   display: block;
     position: relative;
@@ -80,7 +118,7 @@ color: white;
 .ole {
   color:  #e4a01b;
   font-family: "Roboto";
-  font-weight: 100;
+  font-weight: 300;
   visibility: visible;
   -webkit-transform: translateX(0) scale(1);
   opacity: 1;
@@ -181,6 +219,101 @@ footer {
   color: white;
   background: #242128 100% 100% url("../img/sto_lion.svg") no-repeat;
   overflow: hidden;
+}
+
+
+/*Preloader*/
+#loader-wrapper {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #e4a01b;
+z-index: 999999;
+}
+
+#loader {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 48%;
+  left: 48%;
+}
+
+#loader .sk-cube {
+  width: 33%;
+  height: 33%;
+  background-color: #333;
+  float: left;
+  -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+          animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+}
+#loader .sk-cube1 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+#loader .sk-cube2 {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s; }
+#loader .sk-cube3 {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s; }
+#loader .sk-cube4 {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s; }
+#loader .sk-cube5 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+#loader .sk-cube6 {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s; }
+#loader .sk-cube7 {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s; }
+#loader .sk-cube8 {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s; }
+#loader .sk-cube9 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+
+@-webkit-keyframes sk-cubeGridScaleDelay {
+  0%, 70%, 100% {
+    -webkit-transform: scale3D(1, 1, 1);
+            transform: scale3D(1, 1, 1);
+  } 35% {
+    -webkit-transform: scale3D(0, 0, 1);
+            transform: scale3D(0, 0, 1);
+  }
+}
+
+@keyframes sk-cubeGridScaleDelay {
+  0%, 70%, 100% {
+    -webkit-transform: scale3D(1, 1, 1);
+            transform: scale3D(1, 1, 1);
+  } 35% {
+    -webkit-transform: scale3D(0, 0, 1);
+            transform: scale3D(0, 0, 1);
+  }
+}
+/* Loaded */
+.loaded #loader-wrapper{
+	opacity: 0;
+  visibility: hidden;
+	-webkit-transition: all 500ms ease-out;
+  	transition: all 500ms ease-out;
+}
+
+.loaded #loader {
+  opacity: 0;
+  visibility: hidden;
+	-webkit-transition: all 500ms ease-out;
+  	transition: all 500ms ease-out;
+}
+
+
+.no-js #loader-wrapper {
+	display: none;
 }
 
 
@@ -419,7 +552,7 @@ Sign Up and Sign in Modals
   bottom: -35px;
   background: rgba(215, 102, 102, 0.9);
   padding: .8em;
-  z-index: 2;
+  z-index: 99;
   color: #FFF;
   font-size: 13px;
   font-size: 0.8125rem;
@@ -550,4 +683,21 @@ footer a {
 footer a:hover {
     text-decoration: none;
     color: white;
+}
+
+
+
+
+/*Search Page*/
+#search_background{
+  color: white;
+  background: linear-gradient(rgba(252, 167, 0,.84), rgba(0,0,0,0.4)), url("../img/stoBooksHeaderImageWide.jpg") 0% 0%/cover;
+  box-shadow: 5px 5px 25px 0px rgba(46,61,73,0.2);
+  height:100vh;
+  z-index: 2;
+}
+
+#search_background p {
+  font-size: 24px;
+
 }

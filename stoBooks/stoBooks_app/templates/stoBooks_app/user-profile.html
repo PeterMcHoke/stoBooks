@@ -1,62 +1,10 @@
 <!DOCTYPE html>
 <html  lang = "en">
   <head>
-    <!-- {% include 'head.html' %} -->
-    <link rel=icon href="resources/img/StoBooksLogo1.png" sizes="16x16" type="image/png">
-    <title>stoBooks</title>
-    <!--Meta ish-->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Peter McCrae and Hannah Dettmann">
-
-    <!--Bootstrap-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <!--Google Fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
-    <!--Custom styles-->
-    <link href="../static/stoBooks_app/css/style.css" rel="stylesheet" type="text/css">
+    {% include 'head.html' %}
   </head>
   <body>
-    <!-- {% include 'navbar.html'} -->
-
-    <nav class = "navbar navbar-expand-lg navbar-dark sticky-top">
-      <a class = "navbar-brand js-scroll-trigger com" href = "#"><span class = "ole">stoBooks</span></a>
-      <button class="navbar-toggler" type ="button" data-toggle = "collapse" data-target="#navBarResponsive">
-        <span class = "navbar-toggler-icon"></span>
-      </button>
-
-        <div class="collapse navbar-collapse" id="navBarResponsive">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item js-scroll-trigger">
-              <a class="nav-link js-scroll-trigger" href="#goto_section_two">Buy</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#goto_section_three">Sell</a>
-            </li>
-            <li class="nav-item main-nav">
-              <a class="nav-link js-scroll-trigger" href="#">Sign in</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
-          Account
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item js-scroll-trigger cd-signin" href="#0" data-toggle="modal" data-target="#exampleModal">Profile</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item js-scroll-trigger" href="#">Logout</a>
-              </div>
-              </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search books">
-            <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
-          </form>
-      </div>
-    </nav>
+    {% include 'navbar.html'}
     <section id = "section_three">
       <div class = "container">
         <div class = "row">
