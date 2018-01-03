@@ -1,0 +1,66 @@
+{% extends 'stoBooks_app/base.html' %}
+{% block content %}
+<!--Section one-->
+<div id = "search_background" style = "background-attachment: fixed; min-height: 100vh;">
+  {% include 'stoBooks_app/front-navbar.html' %}
+  <div class = "container" >
+    <div class = "row">
+      <div class = "col-12">
+        <h1 class = "display-4 text-center white-text page-header">Find Books</h1>
+      </div>
+    </div>
+  </div>
+<!--Section two-->
+      <a class="goto" id="goto_section_two"></a>
+      <div class = "container">
+        <div class = "row">
+        <div class="col-12">
+          <div class="input-group input-group-lg py-5">
+            <input id = "stoSearch" type="text" class="form-control" placeholder="Search for..." aria-label="Search for..." onkeyup="searchBooks()">
+            <span class="input-group-btn">
+              <button class="btn btn-warning" type="button">Go!</button>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class = "row pb-5">
+        <div class = "col-12 pb-5">
+              <table class = 'table table-light table-responsive-lg rounded-top' id = 'stoLibrary'>
+                <thead>
+                <tr class = "bg-dark text-white">
+                  <th class = 'text-left'>Title</th>
+                  <th class = 'text-left'>Author</th>
+                  <th class = 'text-left'>Edition</th>
+                  <th class = 'text-left'>Department</th>
+                  <th class = 'text-left'>Class Number</th>
+                  <th class = 'text-left'>ISBN</th>
+                  <th class = 'text-left'>Price</th>
+                  <th class = 'text-left'>Seller</th>
+                </tr>
+                </thead>
+                <tbody class = 'table-hover'>
+                  {% if all_posts %}
+                  <tr class = 'book-modal'>
+                    {% for book in all_posts %}
+                      <td>{{book.title}}</td>
+                      <td>{{book.author}}</td>
+                      <td>{{book.edition}}</td>
+                      <td>{{book.dept}}</td>
+                      <td>{{book.class_number}}</td>
+                      <td>{{book.isbn}}</td>
+                      <td>{{book.price}}</td>
+                      <td>{{book.seller.username}}</td>
+                  </tr>
+                  {% endfor %}
+                  {% else %}
+                  <tr>
+                    <td>No books available!</td>
+                  </tr>
+                  {% endif %}
+              </tbody>
+              </table>
+          </div>
+        </div>
+      </div>
+
+{% endblock %}

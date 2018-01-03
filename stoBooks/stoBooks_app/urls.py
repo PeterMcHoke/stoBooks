@@ -6,6 +6,7 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^$', views.profile, name='user-profile'),
     url(r'^search/', views.search, name='search'),
-    # url(r'^$', views.HomePageView.as_view()),
+    url(r'^buy/', views.buy, name='buy'),
+    url(r'^sell/', views.sell, name='sell'),
     url(r'^admin/', admin.site.urls)
 ]

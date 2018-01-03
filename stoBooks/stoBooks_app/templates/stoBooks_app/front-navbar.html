@@ -1,0 +1,38 @@
+{% load staticfiles %}
+
+<nav id = "mainNav" class = "navbar navbar-dark navbar-expand-lg sticky-top">
+    <a class = "navbar-brand navbar-inner js-scroll-trigger com" href = "/search"><span class = "logo">stoBooks</span></a>
+    <button class="navbar-toggler" type ="button" data-toggle = "collapse" data-target="#navBarResponsive">
+      <span class = "navbar-toggler-icon"></span>
+    </button>
+
+      <div class="collapse navbar-collapse" id="navBarResponsive">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="/buy">Buy</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="/sell">Sell</a>
+          </li>
+        </ul>
+        <!--Right side of navbar-->
+        <ul class = "navbar-nav ml-auto mr-3">
+          {% if user.is_authenticated %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
+        Account
+            </a>
+            <div class="dropdown-menu dropdown-menu-center" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item js-scroll-trigger" href="#0" data-toggle="modal" data-target="#ProfileModal">Profile</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item js-scroll-trigger" href="#">Logout</a>
+            </div>
+            </li>
+            {% else %}
+            <li class="nav-item main-nav">
+              <a class="nav-link js-scroll-trigger" href="#">Sign in</a>
+            </li>
+            {% endif %}
+        </ul>
+    </div>
+  </nav>

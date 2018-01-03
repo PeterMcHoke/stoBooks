@@ -1,0 +1,110 @@
+{% extends 'stoBooks_app/base.html' %}
+{% block content %}
+<div id = "search_background" style = "min-height: 100vh; background-attachment: fixed;">
+  {%include 'stoBooks_app/front-navbar.html'%}
+  <div class = "container">
+    <div class = "row pb-5">
+      <div class = "col-12 pb-5">
+        <h1 class = "display-4 text-center white-text page-header">Sell a Book</h1>
+        <form class = "sell-form mt-5" style = "color: black;" id = "three">
+          <div class="form-row pt-3">
+            <div class="form-group col-md-6">
+              <label for="inputTitle">Title</label>
+              <input type="text" class="form-control" id="inputTitle" placeholder="Elementary Number Theory">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputAuthor">Author</label>
+              <input type="text" class="form-control" id="inputAuthor" placeholder="David Burton">
+            </div>
+          </div>
+          <div class="form-row pt-3">
+            <div class="form-group col-md-2">
+              <label for="inputEdition">Edition</label>
+              <input type="text" class="form-control" id="inputEdition" placeholder="7">
+            </div>
+            <div class="form-group col-md-2">
+              <label for="inputDept">Department</label>
+              <input id="inputDept" class="form-control" list = "departments" name="department" placeholder = "MATH">
+                <datalist id="departments">
+                  <option value="AFAM"></option>
+                  <option value="AMCON"></option>
+                  <option value="AMST"></option>
+                  <option value="ART"></option>
+                  <option value="ASIAN"></option>
+                  <option value="BIO"></option>
+                  <option value="CH/BI"></option>
+                  <option value="CHEM"></option>
+                  <option value="CHIN"></option>
+                  <option value="CLASS"></option>
+                  <option value="CSCI"></option>
+                  <option value="DANCE"></option>
+                  <option value="ECON"></option>
+                  <option value="EDUC"></option>
+                  <option value="ENGL"></option>
+                  <option value="ENVST"></option>
+                  <option value="ESAC"></option>
+                  <option value="ESTH"></option>
+                  <option value="FAMST"></option>
+                  <option value="FILM"></option>
+                  <option value="FREN"></option>
+                  <option value="GCON"></option>
+                  <option value="GERM"></option>
+                  <option value="GREEK"></option>
+                  <option value="HIST"></option>
+                  <option value="ID"></option>
+                  <option value="IS"></option>
+                  <option value="JAPAN"></option>
+                  <option value="LATIN"></option>
+                  <option value="MATH"></option>
+                  <option value="MEDIA"></option>
+                  <option value="MGMT"></option>
+                  <option value="MSCS"></option>
+                  <option value="MUSEN"></option>
+                  <option value="MUSIC"></option>
+                  <option value="NORW"></option>
+                  <option value="NURS"></option>
+                  <option value="OFFC"></option>
+                  <option value="PACON"></option>
+                  <option value="PHIL"></option>
+                  <option value="PHYS"></option>
+                  <option value="PSCI"></option>
+                  <option value="PSYCH"></option>
+                  <option value="RACE"></option>
+                  <option value="REL"></option>
+                  <option value="RUSSN"></option>
+                  <option value="SCICN"></option>
+                  <option value="SOAN"></option>
+                  <option value="SPAN"></option>
+                  <option value="STAT"></option>
+                  <option value="SWRK"></option>
+                  <option value="THEAT"></option>
+                  <option value="WMGST"></option>
+                  <option value="WRIT"></option>
+                </datalist>
+              </input>
+          </div>
+            <div class="form-group col-md-2">
+              <label for="inputClass">Class</label>
+              <input type="text" class="form-control" id="inputClass" placeholder="239">
+            </div>
+            <div class="form-group col-md-3">
+              <label for="inputISBN">ISBN</label>
+              <input type="text" class="form-control" id="inputISBN" placeholder="9780073383149">
+            </div>
+            <div class="form-group col-md-3">
+              <label for="inputPrice">Price</label>
+              <!-- <span class="input-group-addon">$</span> -->
+              <!--<span class="currency">$</span>-->
+              <input type="text" class="form-control" id="inputPrice" placeholder="$50">
+            </div>
+          </div>
+          <div class = "text-center">
+            <button class="btn btn-outline-warning" onclick="sellBooks()">Make money</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

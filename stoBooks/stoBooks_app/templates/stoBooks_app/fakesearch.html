@@ -1,0 +1,87 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang = "en">
+<!--Head-->
+<!-- {% include 'stoBooks_app/head.html'} -->
+<head>
+  <!--Browser tab-->
+  <link rel=icon href="resources/img/StoBooksLogo1.png" sizes="16x16" type="image/png">
+  <title>stoBooks</title>
+  <!--Meta ish-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Peter McCrae and Hannah Dettmann">
+
+  <!--Bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <!--Google Fonts-->
+      <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Roboto:100,300" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+  <!--Custom styles-->
+  <link href="../static/stoBooks_app/css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+  <body>
+<!--Preloader-->
+{% include 'stoBooks_app/pre-loader.html' %}
+<div id="loader-wrapper">
+	<div id="loader">
+    <div class="sk-cube sk-cube1"></div>
+    <div class="sk-cube sk-cube2"></div>
+    <div class="sk-cube sk-cube3"></div>
+    <div class="sk-cube sk-cube4"></div>
+    <div class="sk-cube sk-cube5"></div>
+    <div class="sk-cube sk-cube6"></div>
+    <div class="sk-cube sk-cube7"></div>
+    <div class="sk-cube sk-cube8"></div>
+    <div class="sk-cube sk-cube9"></div>
+  </div>
+</div>
+<!--Search section-->
+    <div id="search_background">
+      <!--Transparent navbar-->
+      {% include 'stoBooks_app/front-navbar.html' %}
+      <section class = "Search">
+        <div class = "container">
+          <div class = "row">
+            <div class = "col-12">
+              <h1 class = "display-4 text-center pt-4"><span class = "cursive">Welcome to</span> <br /><span class="display-3">stoBooks</span></h1>
+              <p class = " text-center rob py-3">
+                Textbook exchange made easy. <br /> Search it. Find it. Buy it.<br /> Repeat.
+              </p>
+            </div>
+          </div>
+          <div class = "row">
+            <div class="col-12">
+              <div class="input-group input-group-lg">
+                <input id = "stoSearch" type="text" class="form-control" placeholder="Search for..." aria-label="Search for..." onkeyup="searchBooks()">
+                <span class="input-group-btn">
+                  <button class="btn btn-warning" type="button">Find it</button>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+<!--Footer-->
+{% include 'stoBooks_app/footer.html' %}
+<!--Modals-->
+{% include 'stoBooks_app/modals.html' %}
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src = "../static/stoBooks_app/js/main.js"></script>
+    <script type="text/javascript">
+    	$(document).ready(function(){
+    		setTimeout(function(){
+    			$('body').addClass('loaded');
+    		}, 2000);
+    	});
+    </script>
+  </body>
+</html>
