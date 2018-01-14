@@ -1,24 +1,18 @@
-<!DOCTYPE html>
-<html  lang = "en">
-  <head>
-    {% include 'head.html' %}
-  </head>
-  <body>
-    {% include 'navbar.html'}
-    <section id = "section_three">
-      <div class = "container">
-        <div class = "row">
-          <div class = "col-md-6 offset-md-3 pt-5">
-            <div class = "profile_box">
+{% extends 'stoBooks_app/base.html' %}
+{% block content %}
+      <div id = "search_background" style = "height: 100vh; color: white;">
+        {%include 'stoBooks_app/front-navbar.html'%}
+        <div class = "container">
+          <div class = "row">
+            <div id = "three" class = "col-md-6 offset-md-3  mt-5 py-5 rounded black-text">
               <ul class = "list-unstyled">
                 <li>Username: <span class = "text-secondary">mccrae1</span></li>
                 <li>Phone: <span class = "text-secondary">(734) 585-6779</span></li>
                 <li>Preferred Payment: <span class = "text-secondary">petermchoke(Venmo)</span></li>
+                <li><a href = "/profile"><span class = "small ole">See full profile</span></a></li>
               </ul>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  </body>
-</html>
+      </section>
+{% endblock %}
