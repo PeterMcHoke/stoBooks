@@ -10,10 +10,14 @@ jQuery(document).ready(function($){
 		$tab_signup = $form_modal_tab.children('li').eq(1).children('a'),
 		$forgot_password_link = $form_login.find('.cd-form-bottom-message a'),
 		$back_to_login_link = $form_forgot_password.find('.cd-form-bottom-message a'),
-		$main_nav = $('.main-nav');
+		$main_nav = $('.main-nav'),
 		$book_modal = $('book-modal');
 
-		
+//Moifying the data-tilt to also zoom in on hover
+	$('.js-tilt').tilt({
+	scale: 1.2,
+	maxTilt: 10
+	});
 	//open modal
 	$main_nav.on('click', function(event){
 

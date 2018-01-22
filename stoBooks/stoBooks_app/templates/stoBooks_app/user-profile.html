@@ -1,10 +1,10 @@
 {% extends 'stoBooks_app/base.html' %}
 {% block content %}
-      <div id = "search_background" style = "height: 100vh; color: white;">
+      <div id = "alt-two" style = "color: white;">
         {%include 'stoBooks_app/front-navbar.html'%}
-        <div class = "container">
+        <!-- <div class = "container">
           <div class = "row">
-            <div id = "three" class = "col-md-6 offset-md-3  mt-5 py-5 rounded black-text">
+            <div id = "three" class = "col-md-6 offset-md-3  mt-5 py-5 rounded black-text profile">
               <ul class = "list-unstyled">
                 <li>Username: <span class = "text-secondary">mccrae1</span></li>
                 <li>Phone: <span class = "text-secondary">(734) 585-6779</span></li>
@@ -13,6 +13,122 @@
               </ul>
             </div>
           </div>
-        </div>
-      </section>
+        </div> -->
+<div class="container">
+  <div class="row profile" >
+		<div class="col-lg-3 pt-5 mt-2">
+			<div class="profile-sidebar" id = "alt-three">
+				<!-- SIDEBAR USERPIC -->
+				<div data-tilt class="profile-userpic text-center">
+					<img src="../static/stoBooks_app/img/IMG_0244.JPG" class="img-responsive shadow-it" alt="">
+				</div>
+				<!-- END SIDEBAR USERPIC -->
+				<!-- SIDEBAR USER TITLE -->
+				<div class="profile-usertitle">
+					<div class="profile-usertitle-name">
+						Peter McCrae
+					</div>
+					<div class="profile-usertitle-email">
+						mccrae1@stolaf.edu
+					</div>
+          <hr />
+				</div>
+				<!-- END SIDEBAR USER TITLE -->
+				<!-- SIDEBAR BUTTONS -->
+
+				<!-- END SIDEBAR BUTTONS -->
+				<!-- SIDEBAR MENU -->
+				<div class="profile-usertitle-email text-center">
+					<ul class="list-unstyled">
+            <li>Phone: (734) 585-6779</li>
+            <li>Payment: petermchoke(Venmo)</li>
+					</ul>
+				</div>
+        <div class="profile-userbuttons">
+					<button type="button" class="btn btn-success btn-sm">Edit</button>
+				</div>
+				<!-- END MENU -->
+			</div>
+		</div>
+    <div id = "user-recently-sold" class = "col-lg-9 pb-5 text-center">
+          <h1 class = "white-text rob">Recently Sold</h1>
+          <table class = 'table table-light table-responsive-lg rounded-box' id = 'stoLibrary'>
+            <thead>
+            <tr class = "bg-dark text-white rounded-box">
+              <th class = 'text-left'>Title</th>
+              <th class = 'text-left'>Author</th>
+              <th class = 'text-left'>Edition</th>
+              <th class = 'text-left'>Department</th>
+              <th class = 'text-left'>Class</th>
+              <th class = 'text-left'>ISBN</th>
+              <th class = 'text-left'>Price</th>
+              <th class = 'text-left'>Buyer</th>
+            </tr>
+            </thead>
+            <tbody class = 'table-hover black-text'>
+              {% if all_posts %}
+              <tr class = 'book-modal'>
+                {% for book in all_posts %}
+                  <td>{{book.title}}</td>
+                  <td>{{book.author}}</td>
+                  <td>{{book.edition}}</td>
+                  <td>{{book.dept}}</td>
+                  <td>{{book.class_number}}</td>
+                  <td>{{book.isbn}}</td>
+                  <td>{{book.price}}</td>
+                  <!--Switch seller to buyer-->
+                  <td>{{book.seller.username}}</td>
+              </tr>
+              {% endfor %}
+              {% else %}
+              <tr>
+                <td>No books available!</td>
+              </tr>
+              {% endif %}
+          </tbody>
+        </table>
+      </div>
+		</div>
+    <div class = "row pb-5">
+      <div id = "user-recently-purchased" class = "col-lg-9 offset-lg-3 text-center">
+        <h1 class = "white-text rob">Recently Purchased</h1>
+        <table class = 'table table-light table-responsive-lg rounded-box' id = 'stoLibrary'>
+          <thead>
+          <tr class = "bg-dark text-white rounded-box">
+            <th class = 'text-left'>Title</th>
+            <th class = 'text-left'>Author</th>
+            <th class = 'text-left'>Edition</th>
+            <th class = 'text-left'>Department</th>
+            <th class = 'text-left'>Class</th>
+            <th class = 'text-left'>ISBN</th>
+            <th class = 'text-left'>Price</th>
+            <th class = 'text-left'>Seller</th>
+          </tr>
+          </thead>
+          <tbody class = 'table-hover black-text'>
+            {% if all_posts %}
+            <tr class = 'book-modal'>
+              {% for book in all_posts %}
+                <td>{{book.title}}</td>
+                <td>{{book.author}}</td>
+                <td>{{book.edition}}</td>
+                <td>{{book.dept}}</td>
+                <td>{{book.class_number}}</td>
+                <td>{{book.isbn}}</td>
+                <td>{{book.price}}</td>
+                <td>{{book.seller.username}}</td>
+            </tr>
+            {% endfor %}
+            {% else %}
+            <tr>
+              <td>No books available!</td>
+            </tr>
+            {% endif %}
+        </tbody>
+      </table>
+      </div>
+    </div>
+	</div>
+</div>
+</section>
 {% endblock %}

@@ -18,10 +18,12 @@ def index(request):
     return render(request, 'stoBooks_app/index.html', context)
 
 def profile(request):
+    all_posts = Book.objects.all()
     current_student= Student.objects.filter(id=1)
     template = loader.get_template('stoBooks_app/user-profile.html')
     context = {
             'current_student':current_student,
+            'all_posts':all_posts,
             }
     return render(request, 'stoBooks_app/user-profile.html', context)
 

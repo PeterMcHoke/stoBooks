@@ -104,12 +104,16 @@ tr {
   color: black;
 }
 
-/*BEST BOXSHADOW ON THE INTERNET
-  box-shadow: 5px 5px 25px 0px rgba(46,61,73,0.2);
-
-Hover:
-  box-shadow: 2px 4px 8px 0px rgba(46,61,73,0.2)
-*/
+.rounded-box {
+  border-radius: 5px;
+}
+/*BEST BOXSHADOW ON THE INTERNET*/
+.shadow-it {
+  box-shadow: 8px 10px 20px 0px rgba(46,61,73,0.25)
+}
+.shadow-it:hover {
+  box-shadow: 2px 4px 8px 0px rgba(46,61,73,0.35);
+}
 /*Navbar*/
 
 @media only screen and (max-width: 992px) {
@@ -255,11 +259,16 @@ header {
 #two {
   background-image: url("../img/congruent_outline.png");
 }
-
+#alt-two {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(252, 167, 0,.25)), url("../img/congruent_outline.png");
+}
 #three {
   background-image: url("../img/topography.png");
-
 }
+#alt-three {
+  background: linear-gradient(rgba(255,255,255,0.6), rgba(255, 255, 255,0.7)), url("../img/topography.png");
+}
+
 .sell-form {
   background-color: white;
   padding: 20px;
@@ -724,18 +733,134 @@ Sign Up and Sign in Modals
   border-radius: 10px;
   padding: 20px;
 }
+/*Profile page*/
+/* Profile container */
+
+
+.profile {
+  margin: 20px 0;
+}
+
+/* Profile sidebar */
+.profile-sidebar {
+  padding: 20px 0 10px 0;
+  background: #fff;
+  border-radius: 5px;
+}
+
+.profile-userpic img {
+  float: none;
+  margin: 0 auto;
+  width: 50%;
+  height: 50%;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
+}
+
+.profile-usertitle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profile-usertitle-name {
+  color: #5a7391;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.profile-usertitle-email {
+  color: #5b9bd1;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.profile-userbuttons {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.profile-userbuttons .btn {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.profile-userbuttons .btn:last-child {
+  margin-right: 0px;
+}
+
+.profile-usermenu {
+  margin-top: 30px;
+}
+
+.profile-usermenu ul li {
+  border-bottom: 1px solid #f0f4f7;
+}
+
+.profile-usermenu ul li:last-child {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li a {
+  color: #93a3b5;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.profile-usermenu ul li a i {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.profile-usermenu ul li a:hover {
+  background-color: #fafcfd;
+  color: #5b9bd1;
+}
+
+.profile-usermenu ul li.active {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li.active a {
+  color: #5b9bd1;
+  background-color: #f6f9fb;
+  border-left: 2px solid #5b9bd1;
+  margin-left: -2px;
+}
+
+/* Profile Content */
+.profile-content {
+  padding: 20px;
+  background: #fff;
+  min-height: 460px;
+}
+
+@media only screen and (max-width: 992px) {
+  .profile-usertitle-name {
+    font-size: 24px;
+  }
+  .profile-usertitle-email {
+    font-size: 16px;
+  }
+  #user-recently-sold {
+    margin-top: 50px;
+  }
+}
 /*Footer*/
 footer img {
   height: 120px;
   width: auto;
 }
 
-footer img:hover {
+/*footer img:hover {
   transition: all 300ms linear 0ms;
   -moz-transform: scale(1.1);
   -webkit-transform: scale(1.1);
   transform: scale(1.03);
-}
+}*/
 footer a {
   text-decoration: none;
 }
