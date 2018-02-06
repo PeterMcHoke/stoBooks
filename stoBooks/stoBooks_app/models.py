@@ -5,20 +5,6 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 
 
-# Student model with method to create itself
-class Student(models.Model):
-    first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30)
-    username = models.CharField(max_length=30)
-    payment = models.CharField(max_length=30)
-
-    def __str__(self):
-        return self.username
-
-    class Meta:
-        ordering = ['-username']
-
-
 #Make all of these dept tuples of the form ('Model value','Human readable value')
 class Book(models.Model):
     DEPT_CHOICES = (
@@ -49,7 +35,7 @@ class Book(models.Model):
     isbn = models.IntegerField()
     # isbn = fields.IntegerRangeField(min_value=1111111111111, max_value=9999999999999)
     price = models.IntegerField()
-    seller = models.ForeignKey(Student, on_delete=models.CASCADE)
+    seller = models.ForeignKey(User, on_delete=models.CASCADE)
     post_date = models.DateTimeField(default=timezone.now)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)

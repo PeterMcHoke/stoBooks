@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.http import Http404
 from django.template import loader #allows django to import vi
 from django.views.generic import TemplateView
 from .models import Book
-from .models import Student
+from .forms import BookForm
+from django.urls import reverse
+from django.contrib.auth.models import User
 
 
 def index(request):
@@ -41,7 +43,21 @@ def buy(request):
     return render(request, 'stoBooks_app/buy.html', context)
 
 def sell(request):
-    return render(request, 'stoBooks_app/sell.html',{})
+    if request.method == 'POST':
+        form = BookForm(request.POST)
+        book = form.save(commit=False)
+        book.seller = User.objects.get(username=request.user)
+        book.save()
+        return HttpResponseRedirect('/sell/')
+        # print(book)
+        #     book.save()
+        #     print(reverse('sell'))
+        #     return HttpResponseRedirect(reverse('sell'))
+        # else:
+        #     print(form.errors)
+    else:
+        form = BookForm()
+    return render(request, 'stoBooks_app/sell.html', {'form': form})
 
 
 
