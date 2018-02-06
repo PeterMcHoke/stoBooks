@@ -1,7 +1,7 @@
 {% extends 'stoBooks_app/base.html' %}
 {% block content %}
 
-      <div id = "search_background" style = "height: 100vh; color: white;">
+      <div id = "search_background" style = "min-height: 100vh; color: white;">
         {%include 'stoBooks_app/front-navbar.html'%}
         <div class = "container">
           <div class = "row">
@@ -13,15 +13,71 @@
             </div>
           </div>
           <div class = "row">
-            <div class="col-12">
+            <div class="col-12 pb-5">
               <div class="input-group input-group-lg">
-                <input id = "stoSearch" type="text" class="form-control" placeholder="Search for..." aria-label="Search for..." onkeyup="searchBooks()">
+                <input id = "stoSearch" name="search" type="text" class="form-control" placeholder="Search for..." aria-label="Search for..." onkeyup="searchBooks()">
                 <span class="input-group-btn">
-                  <button class="btn btn-warning" type="button">Find it</button>
+                  <button class="btn btn-warning" type="button" onclick="search()">Find it</button>
                 </span>
               </div>
             </div>
           </div>
+          <div id="searchResults" class = "row pb-5">
+            <div class = "col-12 pb-5">
+                  <table class = 'table table-light table-responsive-lg rounded-top' id = 'stoLibrary'>
+                    <thead>
+                    <tr class = "bg-dark text-white">
+                      <th class = 'text-left'>Title</th>
+                      <th class = 'text-left'>Author</th>
+                      <th class = 'text-left'>Edition</th>
+                      <th class = 'text-left'>Department</th>
+                      <th class = 'text-left'>Class Number</th>
+                      <th class = 'text-left'>ISBN</th>
+                      <th class = 'text-left'>Price</th>
+                      <th class = 'text-left'>Seller</th>
+                    </tr>
+                    </thead>
+                    <tbody id="resultsContainer" class = 'table-hover'>
+                    </tbody>
+                  </table>
+              </div>
+            </div>
         </div>
       </section>
+
+
+{% endblock %}
+{% block scripts %}
+  <script type="text/javascript">
+    $(document).ready(function () {
+      allBooks = JSON.parse('{{ all_posts|escapejs }}')
+    })
+
+    function search() {
+      query = $('#stoSearch').val()
+      console.log(allBooks)
+      const searchResults = allBooks.filter(book => (
+        book.fields.title.includes(query)
+      ))
+      console.log(searchResults)
+      const searchResultsHTML = searchResults.map(result => (
+        `<tr class='book-modal'>
+            <td>${result.fields.title}</td>
+            <td>${result.fields.author}</td>
+            <td>${result.fields.edition}</td>
+            <td>${result.fields.dept}</td>
+            <td>${result.fields.class_number}</td>
+            <td>${result.fields.isbn}</td>
+            <td>${result.fields.price}</td>
+            <td>${result.fields.seller}</td>
+          </tr>`
+      ))
+      console.log(searchResultsHTML)
+      $("#searchResults").css('display', 'block')
+      $("#resultsContainer").html(
+        searchResultsHTML.join('\n')
+      )
+    }
+
+  </script>
 {% endblock %}

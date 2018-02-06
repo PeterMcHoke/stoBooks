@@ -881,3 +881,11 @@ footer a:hover {
   font-size: 24px;
 
 }
+
+#searchResults {
+  display: none;
+}
+
+.book-modal {
+  color: black;
+}

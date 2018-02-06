@@ -9,6 +9,9 @@ from .models import Book
 from .forms import BookForm
 from django.urls import reverse
 from django.contrib.auth.models import User
+from django.core import serializers
+
+json_serializer = serializers.get_serializer("json")()
 
 
 def index(request):
@@ -31,7 +34,8 @@ def profile(request):
 
 
 def search(request):
-    return render(request, 'stoBooks_app/search.html', {})
+    all_posts = json_serializer.serialize(Book.objects.all(), ensure_ascii=False)
+    return render(request, 'stoBooks_app/search.html', {'all_posts': all_posts})
 
 def buy(request):
     all_posts = Book.objects.all()
